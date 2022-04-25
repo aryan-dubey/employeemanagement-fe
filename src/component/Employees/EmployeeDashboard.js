@@ -9,8 +9,7 @@ class EmployeeDashboard extends React.Component{
 
     componentDidMount()
     {
-            this.props.getEmployees();
-
+        this.props.getEmployees();
     }
 
     render(){

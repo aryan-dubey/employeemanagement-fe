@@ -19,7 +19,6 @@ class StatusDashboard extends React.Component {
 
         return(
     <>
-        <Header/>
         <div className="projects">
             <div className="container">
                 <div className="row">
