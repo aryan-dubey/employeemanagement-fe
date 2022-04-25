@@ -1,58 +1,56 @@
 import React  from "react";
 import {connect} from "react-redux";
-import {createEmployee} from '../../actions/EmployeeAction';
+import { addStatus } from '../../../actions/StatusAction';
 import PropTypes from "prop-types";
 
-class AddEmployee extends React.Component{
+class AddStatus extends React.Component{
+    
     constructor(props){
         super(props);
         this.state=
         {
-            firstName:"",
-            lastName:"",
-            userId:"",
-            email:"",
-            dob:"",
+            comments : "",
+            details : "",
+            userId : "",
+            complianceId : "",
+            createDate : "",
         };
     }
+    
     onChange=(event)=>{
-       // console.log("onchange");
        this.setState({[event.target.name]:event.target.value});
     }
 
     onSubmit=(event)=>{
         event.preventDefault();
-     //   console.log("submit");
-     const newEmployee={
-        firstName:this.state.firstName,
-        lastName:this.state.lastName,
-        userId:this.state.userId,
-        email:this.state.email,
-        dob:this.state.dob,
-     };
-    // console.log(newEmployee);
-    //call the create employee method from employee action
-    this.props.createEmployee(newEmployee,this.props.history);
-
+        //   console.log("submit");
+        const newStatus = {
+            comments:this.state.comments,
+            details:this.state.details,
+            userId:this.state.userId,
+            complianceId:this.state.complianceId,
+            createDate:this.state.createDate,
+        };
+        // console.log(newEmployee);
+        // call the create employee method from employee action
+        this.props.addStatus(newStatus);
     };
-
-
-
+    
     render(){
         return(
             <div className="project">
             <div className="container">
             <div className="row">
             <div className="col-md-8 m-auto">
-                <h5 className="display-4 text-center">Add Employee form</h5>
+                <h5 className="display-4 text-center">Add Status form</h5>
                 <hr />
 
                 <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                 <input type="text" className="form-control form-control-lg " 
-                    placeholder="First Name" 
-                    name="firstName"
-                    value={this.state.firstName}
+                    placeholder="Comments" 
+                    name="comments"
+                    value={this.state.comments}
                     onChange={this.onChange}
                  />
                  </div>
@@ -61,9 +59,9 @@ class AddEmployee extends React.Component{
 
 
                 <div className="form-group">
-                 <input type="text" className="form-control form-control-lg " placeholder="Last Name"
-                     name="lastName" 
-                     value={this.state.lastName}
+                 <input type="text" className="form-control form-control-lg " placeholder="Details"
+                     name="details" 
+                     value={this.state.details}
                      onChange={this.onChange}
                  />
                 </div>
@@ -83,9 +81,9 @@ class AddEmployee extends React.Component{
 
 
                 <div className="form-group">
-                <input type="text" className="form-control form-control-lg" placeholder="Email id"
-                       name="email"
-                       value={this.state.email}
+                <input type="text" className="form-control form-control-lg" placeholder="Unique Employee complianceId"
+                       name="complianceId"
+                       value={this.state.complianceId}
                        onChange={this.onChange}
                 />
                 </div>
@@ -93,12 +91,11 @@ class AddEmployee extends React.Component{
                         &nbsp;
 
                 
-                        <h6>Date of Birth</h6>
+                        <h6>Create Date</h6>
                         <div className="form-group">
-                            <input type="date" className="form-control form-control-lg" name="dob" 
-                                value={this.state.dob}
+                            <input type="date" className="form-control form-control-lg" name="createDate" 
+                                value={this.state.createDate}
                                 onChange={this.onChange}
-
                             />
                             </div>
 
@@ -113,8 +110,8 @@ class AddEmployee extends React.Component{
     }
 }
 
-AddEmployee.propTypes={
-    createEmployee:PropTypes.func.isRequired,    
-    
+AddStatus.propTypes={
+    addStatus : PropTypes.func.isRequired,    
 };
-export default connect(null,{createEmployee})(AddEmployee);
+
+export default connect(null,{addStatus})(AddStatus);
