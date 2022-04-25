@@ -24,14 +24,9 @@ class MainDashboard extends React.Component{
                          </a>
                          &nbsp;
                         &nbsp;
-                         <a class="text-white bg-success btn btn-lg btn-info" onClick={
-                             (e) => {
-                                 e.preventDefault();
-                                 window.location.href = "/statusDashboard";
-                             }
-                         }>
+                         <Link to="/statusdashboard" class="text-white bg-success btn btn-lg btn-info">
                             Status Dashboard
-                         </a>
+                         </Link>
                         <br/>
                         <hr/>
                         </div>    
