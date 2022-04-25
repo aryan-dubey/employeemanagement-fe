@@ -82,6 +82,7 @@ class AddEmployee extends React.Component{
                         &nbsp;
 
 
+
                 <div className="form-group">
                 <input type="text" className="form-control form-control-lg" placeholder="Email id"
                        name="email"

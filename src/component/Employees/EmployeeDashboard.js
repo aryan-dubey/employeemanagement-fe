@@ -40,7 +40,6 @@ class EmployeeDashboard extends React.Component{
         );
     }
 }
-
 EmployeeDashboard.propTypes=
 {
     getEmployees:PropTypes.func.isRequired,
