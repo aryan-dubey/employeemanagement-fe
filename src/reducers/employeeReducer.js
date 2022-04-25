@@ -1,7 +1,8 @@
-import { GET_EMPLOYEES, GET_EMPLOYEE, DELETE_EMPLOYEE } from "../actions/types";
+import { GET_EMPLOYEES, GET_EMPLOYEE, DELETE_EMPLOYEE, GET_STATUSES } from "../actions/types";
 const initialState={
     employees:[],
     employee:{},
+    statuses:[],
 
 };
 export default function(state=initialState,action){
@@ -22,6 +23,11 @@ export default function(state=initialState,action){
               employees: action.payload,
 
             }
+            case GET_STATUSES:
+              return{
+                ...state,
+                statuses:action.payload,
+              };
         default:
             return state;
           }

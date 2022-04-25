@@ -37,7 +37,7 @@ class StatusDashboard extends React.Component {
                         {
                             statuses && statuses.map((status)=>(
                                 <>
-                                    <StatusItem key={status.statusId} employee={status}/>
+                                    <StatusItem key={status.statusId} status={status}/>
                                 </>
                             ))
                         }

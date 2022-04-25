@@ -7,6 +7,7 @@ class StatusItem extends React.Component{
 
          return(
             <div className="container">
+                {console.log(status)}
             <div className="card card-body bg-light mb-3">
                 <div className="row">
 

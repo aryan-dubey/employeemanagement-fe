@@ -3,7 +3,7 @@ import { GET_ERRORS, GET_STATUSES, ADD_STATUS } from './types';
 
 export const addStatus = (status) => async (dispatch) => {
     try {
-        const res = await axios.post('http://localhost:9080/api/employeemanagement/compliance/statusreport', status);
+        const res = await axios.post('http://localhost:9080/api/employeemanagement/compliance/status', status);
         window.location.href = "/statusDashboard";
     } catch (error) {
         dispatch({
@@ -15,7 +15,7 @@ export const addStatus = (status) => async (dispatch) => {
 
 export const getStatus = () => async (dispatch) => {
     try {
-        const res = await axios.get('http://localhost:9080/api/employeemanagement/compliance/liststatus');
+        const res = await axios.get('http://localhost:9080/api/employeemanagement/compliance/ListAll');
         dispatch({
             type: GET_STATUSES,
             payload: res.data,

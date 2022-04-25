@@ -6,4 +6,5 @@ export default combineReducers({
 
     errors:errorReducer,
     employees:employeeReducer,
+    statuses:employeeReducer,
 });
